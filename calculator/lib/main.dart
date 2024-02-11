@@ -21,7 +21,7 @@ class _MyAppState extends State<MyApp> {
       home: SafeArea(
         child: Scaffold(
           appBar: AppBar(
-            backgroundColor: Color.fromARGB(255, 141, 232, 125),
+            backgroundColor: const Color.fromARGB(255, 141, 232, 125),
             title: const Text("calculator",style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),),
             actions: [IconButton(onPressed: (){}, icon:  const Icon(Icons.menu,color:Color.fromARGB(255, 250, 249, 249)))],
           ),
@@ -82,7 +82,16 @@ class _MyAppState extends State<MyApp> {
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
                 child: const Center(child: Text("C",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w500),)),
                  ),
-             )
+             ),
+             Padding(
+               padding: const EdgeInsets.all(4.0),
+               child: FloatingActionButton(onPressed:() {
+                 height++;
+               },
+               backgroundColor: const Color.fromARGB(255, 123, 224, 138),
+                child:const Center(child: Text("sin",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w500),)),
+                 ),
+             ),
              ],
             ),
             Row(
@@ -130,7 +139,16 @@ class _MyAppState extends State<MyApp> {
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
                 child:const Center(child: Text("AC",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w500),)),
                  ),
-             )
+             ),
+             Padding(
+               padding: const EdgeInsets.all(4.0),
+               child: FloatingActionButton(onPressed:() {
+                 height++;
+               },
+               backgroundColor: const Color.fromARGB(255, 123, 224, 138),
+                child:const Center(child: Text("cos",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w500),)),
+                 ),
+             ),
              ],
             ),
              Row(
@@ -178,7 +196,17 @@ class _MyAppState extends State<MyApp> {
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
                 child: const Center(child: Text("0",style: TextStyle(fontSize: 40,fontWeight: FontWeight.w500),)),
                  ),
-             )
+             ),
+              Padding(
+               padding: const EdgeInsets.all(4.0),
+               child: FloatingActionButton(onPressed:() {
+                 height++;
+               },
+               backgroundColor: const Color.fromARGB(255, 123, 224, 138),
+                child: const Center(child: Text("tan",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w500),)),
+                 ),
+             ),
+             
              ],
             ),
             Row(
@@ -206,7 +234,7 @@ class _MyAppState extends State<MyApp> {
                  height++;
                },
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
-                child: const Center(child: Text("()",style: TextStyle(fontSize: 40,fontWeight: FontWeight.w500),)),
+                child: const Center(child: Text("(",style: TextStyle(fontSize: 40,fontWeight: FontWeight.w500),)),
                  ),
              ),
               Padding(
@@ -215,7 +243,7 @@ class _MyAppState extends State<MyApp> {
                  height++;
                },
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
-                child: const Center(child: Text("%",style: TextStyle(fontSize: 40,fontWeight: FontWeight.w500),)),
+                child: const Center(child: Text(")",style: TextStyle(fontSize: 40,fontWeight: FontWeight.w500),)),
                  ),
              ),
              Padding(
@@ -224,9 +252,77 @@ class _MyAppState extends State<MyApp> {
                  height++;
                },
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
+                child:const Center(child: Text("√",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w500),)),
+                 ),
+             ),
+              Padding(
+               padding: const EdgeInsets.all(4.0),
+               child: FloatingActionButton(onPressed:() {
+                 height++;
+               },
+               backgroundColor: const Color.fromARGB(255, 123, 224, 138),
+                child: const Center(child: Text("log",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w500),)),
+                 ),
+             ),
+             ],
+            ),
+            Row(
+             children: [Padding(
+               padding: const EdgeInsets.all(4.0),
+               child: FloatingActionButton(onPressed:() {
+                 height++;
+               },
+               backgroundColor: const Color.fromARGB(255, 123, 224, 138),
+              child:const Center(child: Text("Ans",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w500),)),
+                 ),
+             ),
+             Padding(
+               padding: const EdgeInsets.all(4.0),
+               child: FloatingActionButton(onPressed:() {
+                 height++;
+               },
+               backgroundColor: const Color.fromARGB(255, 123, 224, 138),
+                child: const Center(child: Text("x!",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w500),)),
+                 ),
+             ),
+              Padding(
+               padding: const EdgeInsets.all(4.0),
+               child: FloatingActionButton(onPressed:() {
+                 height++;
+               },
+               backgroundColor: const Color.fromARGB(255, 123, 224, 138),
+                child: const Center(child: Text("%",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w500),)),
+                 ),
+             ),
+              Padding(
+               padding: const EdgeInsets.all(4.0),
+               child: FloatingActionButton(onPressed:() {
+                 height++;
+               },
+               backgroundColor: const Color.fromARGB(255, 123, 224, 138),
+                child: const Center(child: Text("x^y",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w500),)),
+                 ),
+             ),
+             Padding(
+               padding: const EdgeInsets.all(4.0),
+               child: FloatingActionButton(onPressed:() {
+                 height++;
+               },
+               backgroundColor: const Color.fromARGB(255, 123, 224, 138),
+                child:const Center(child: Text("e",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w500),)),
+                 ),
+             ),
+              Padding(
+               padding: const EdgeInsets.all(4.0),
+               child: FloatingActionButton(onPressed:() {
+                 height++;
+               },
+               backgroundColor: Color.fromARGB(255, 245, 3, 3),
                 child:const Center(child: Text("=",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w500),)),
                  ),
              )
+             
+             
              ],
             ),
 
