@@ -12,7 +12,11 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  int height=5;
+  double value1=0;
+  double value2=0;
+  double result=0;
+  int height=3;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
