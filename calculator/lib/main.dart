@@ -25,6 +25,8 @@ class _MyAppState extends State<MyApp> {
   String operator = " "; 
   int i=0;
   
+
+  
   
 
   @override
@@ -46,23 +48,18 @@ class _MyAppState extends State<MyApp> {
               height: 300,
               width: 400,
               decoration: const BoxDecoration(color: Color.fromARGB(255, 216, 81, 81)),
-              child: Align(alignment: Alignment.bottomRight,
-                child: Row(
-                  mainAxisAlignment : MainAxisAlignment.end,
-                  children: [
-                    Row(
-                      mainAxisAlignment : MainAxisAlignment.end,
-                      children: [
-                       Text( myArray1.join(),style:TextStyle(fontSize: 60,fontWeight: FontWeight.w500),),
-                       Text(  "$v",style:TextStyle(fontSize: 60,fontWeight: FontWeight.w500)),
-                     
-                      ],
-                    ),
-                  ],
-                ),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment : MainAxisAlignment.end,
+                    children: [
+                      Text( myArray1.join(),
+                      style:TextStyle(fontSize: i>=10 ?40:60,fontWeight: FontWeight.w500),),
+                      Text(  "$v",style:TextStyle(fontSize: i>=10 ?40:60,fontWeight: FontWeight.w500)),
+                    ],
+                  ),
+                ],
               ),
-             
-               
             ),
            
             
@@ -79,9 +76,12 @@ class _MyAppState extends State<MyApp> {
              children: [Padding(
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
+              
                 setState(() {
                    v="+";
                   
+                   i++;
+                 
                    
                    
                 });
@@ -95,6 +95,10 @@ class _MyAppState extends State<MyApp> {
                child: FloatingActionButton(onPressed:() {
                  setState(() {
                   myArray1.add(1); 
+                
+                   i++;
+                 
+                   
                   
                  });
                 
@@ -108,7 +112,8 @@ class _MyAppState extends State<MyApp> {
                child: FloatingActionButton(onPressed:() {
                  setState(() {
                     myArray1.add(2); 
-                   i++;
+                       i++;
+                   
                 });
                },
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
@@ -132,17 +137,12 @@ class _MyAppState extends State<MyApp> {
                child: FloatingActionButton(onPressed:() {
                  setState(() {
                     myArray1.removeLast();
-                    
+                    v=' ';
+                    i--;
                     
                    
                 });
-                setState(() {
-                   
-                    
-                    v= " ";
-                   
-                 }
-                );
+               
                },
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
                 child: const Center(child: Text("C",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w500),)),
@@ -153,6 +153,7 @@ class _MyAppState extends State<MyApp> {
                child: FloatingActionButton(onPressed:() {
                  setState(() {
                   v="sin";
+                     i++;
                 });
                },
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
@@ -167,6 +168,7 @@ class _MyAppState extends State<MyApp> {
                child: FloatingActionButton(onPressed:() {
                  setState(() {
                   v="-";
+                     i++;
                 });
                },
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
@@ -178,6 +180,7 @@ class _MyAppState extends State<MyApp> {
                child: FloatingActionButton(onPressed:() {
                  setState(() {
                    myArray1.add(4); 
+                      i++;
                 });
                },
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
@@ -188,7 +191,8 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                  setState(() {
-                   myArray1.add(5); 
+                   myArray1.add(5);
+                      i++; 
                 });
                },
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
@@ -200,6 +204,7 @@ class _MyAppState extends State<MyApp> {
                child: FloatingActionButton(onPressed:() {
                  setState(() {
                    myArray1.add(6); 
+                      i++;
                 });
                },
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
@@ -211,6 +216,8 @@ class _MyAppState extends State<MyApp> {
                child: FloatingActionButton(onPressed:() {
                  setState(() {
                     myArray1.clear();
+                    i=0;
+                    
                     
                    
                  });
@@ -224,6 +231,7 @@ class _MyAppState extends State<MyApp> {
                child: FloatingActionButton(onPressed:() {
                  setState(() {
                     v="cos";
+                       i++;
                 });
                },
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
@@ -237,7 +245,8 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                  setState(() { 
-                  v="×"; 
+                  v="×";
+                     i++; 
                 });
                },
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
@@ -249,6 +258,7 @@ class _MyAppState extends State<MyApp> {
                child: FloatingActionButton(onPressed:() {
                   setState(() {
                   myArray1.add(7); 
+                     i++;
                 });
                },
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
@@ -259,7 +269,8 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                   setState(() {
-                  myArray1.add(8); 
+                  myArray1.add(8);
+                     i++; 
                 });
                },
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
@@ -270,7 +281,8 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                   setState(() {
-                   myArray1.add(9); 
+                   myArray1.add(9);
+                      i++; 
                 });
                },
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
@@ -282,6 +294,7 @@ class _MyAppState extends State<MyApp> {
                child: FloatingActionButton(onPressed:() {
                   setState(() {
                    myArray1.add(0); 
+                      i++;
                 });
                },
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
@@ -293,6 +306,7 @@ class _MyAppState extends State<MyApp> {
                child: FloatingActionButton(onPressed:() {
                   setState(() {
                   v="tan" ;
+                     i++;
                 });
                },
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
@@ -307,7 +321,8 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                   setState(() {
-                  v="÷"; 
+                  v="÷";
+                     i++; 
                 });
                },
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
@@ -319,6 +334,7 @@ class _MyAppState extends State<MyApp> {
                child: FloatingActionButton(onPressed:() {
                  setState(() {
                  v="."; 
+                    i++;
                 });
                },
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
@@ -330,6 +346,7 @@ class _MyAppState extends State<MyApp> {
                child: FloatingActionButton(onPressed:() {
                  setState(() {
                   v="("; 
+                     i++;
                 });
                },
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
@@ -340,7 +357,8 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                  setState(() {
-                  v=")"; 
+                  v=")";
+                     i++; 
                 });
                },
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
@@ -352,6 +370,7 @@ class _MyAppState extends State<MyApp> {
                child: FloatingActionButton(onPressed:() {
                  setState(() {
                  v="√"; 
+                    i++;
                 });
                },
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
@@ -362,7 +381,8 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                  setState(() {
-                   v="log"; 
+                   v="log";
+                      i++; 
                 });
                },
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
@@ -376,7 +396,8 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                  setState(() {
-                    v="Ans"; 
+                    v="Ans";
+                       i++; 
                 });
                },
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
@@ -388,6 +409,7 @@ class _MyAppState extends State<MyApp> {
                child: FloatingActionButton(onPressed:() {
                  setState(() {
                    v="x!"; 
+                      i++;
                 });
                },
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
@@ -399,6 +421,7 @@ class _MyAppState extends State<MyApp> {
                child: FloatingActionButton(onPressed:() {
                  setState(() {
                    v="%"; 
+                      i++;
                 });
                },
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
@@ -410,6 +433,7 @@ class _MyAppState extends State<MyApp> {
                child: FloatingActionButton(onPressed:() {
                  setState(() {
                    v="^"; 
+                      i++;
                 });
                },
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
@@ -421,6 +445,7 @@ class _MyAppState extends State<MyApp> {
                child: FloatingActionButton(onPressed:() {
                  setState(() {
                    v="e"; 
+                      i++;
                 });
                },
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
