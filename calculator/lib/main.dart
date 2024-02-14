@@ -54,8 +54,11 @@ class _MyAppState extends State<MyApp> {
                     mainAxisAlignment : MainAxisAlignment.end,
                     children: [
                       Text( myArray1.join(),
-                      style:TextStyle(fontSize: i>=10 ?40:60,fontWeight: FontWeight.w500),),
-                      Text(  "$v",style:TextStyle(fontSize: i>=10 ?40:60,fontWeight: FontWeight.w500)),
+                      style:TextStyle(fontSize: i>=10 ?40:60,fontWeight: FontWeight.w500),
+                      ),
+                      Text(  "$v",
+                      style:TextStyle(fontSize: i>=10 ?40:60,fontWeight: FontWeight.w500)
+                      ),
                     ],
                   ),
                 ],
