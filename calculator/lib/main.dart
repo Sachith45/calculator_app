@@ -13,17 +13,17 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  double value1=0;
-  double value2=0;
-  double result=0;
-  int height=3;
+ 
   String v = " ";
+  List<String> myArray = [];
   List<int> myArray1 = [];
   List<int> myArray2 = [];
-  List<String> myArray3 = [];
- 
-  String operator = " "; 
-  int i=0;
+  int i=0,j=0,k=0;
+  int a=0;
+  int b=0;
+  late int result=add(j:j,k:k);
+   
+  
   
 
   
@@ -47,18 +47,17 @@ class _MyAppState extends State<MyApp> {
               Container(
               height: 300,
               width: 400,
-              decoration: const BoxDecoration(color: Color.fromARGB(255, 216, 81, 81)),
+              decoration: const BoxDecoration(color: Color.fromARGB(255, 247, 245, 245)),
               child: Column(
                 children: [
                   Row(
                     mainAxisAlignment : MainAxisAlignment.end,
-                    children: [
-                      Text( myArray1.join(),
+                    children:[
+                      Text( i>=15 ? "error": myArray.join(),
                       style:TextStyle(fontSize: i>=10 ?40:60,fontWeight: FontWeight.w500),
                       ),
-                      Text(  "$v",
-                      style:TextStyle(fontSize: i>=10 ?40:60,fontWeight: FontWeight.w500)
-                      ),
+                     
+                     
                     ],
                   ),
                 ],
@@ -81,14 +80,13 @@ class _MyAppState extends State<MyApp> {
                child: FloatingActionButton(onPressed:() {
               
                 setState(() {
-                   v="+";
-                  
+                   myArray.add("+");
                    i++;
-                 
-                   
-                   
-                });
-               },
+                   v="+";
+                   result=add(j:j,k:k);
+                }
+              );
+            },
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
                child: const Center(child: Text("+",style: TextStyle(fontSize: 40,fontWeight: FontWeight.w500),)),
                  ),
@@ -97,13 +95,21 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                  setState(() {
-                  myArray1.add(1); 
-                
-                   i++;
-                 
-                   
+                 myArray.add("1");
+                 if(v==" "){
+                  myArray1.add(1);
+                  a++;
+                 }
                   
-                 });
+                else{
+                  myArray2.add(1);
+                  b++;
+                 }
+                 
+                 
+                 i++;
+                 }
+                );
                 
                },
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
@@ -114,9 +120,19 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                  setState(() {
-                    myArray1.add(2); 
-                       i++;
-                   
+                  myArray.add("2");
+                 if(v==" "){
+                  myArray1.add(2);
+                  a++;
+                 }
+                  
+                else{
+                  myArray2.add(2);
+                  b++;
+                 }
+                 
+                 
+                 i++;
                 });
                },
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
@@ -127,7 +143,7 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                 setState(() {
-                   myArray1.add(3); 
+                   myArray.add("3"); 
                    i++;
                 });
                },
@@ -139,12 +155,28 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                  setState(() {
-                    myArray1.removeLast();
-                    v=' ';
-                    i--;
-                    
-                   
-                });
+                 if (myArray.isNotEmpty) { 
+                 myArray.removeLast();
+                 result=0;
+                 i--;
+                 if(b!=0)
+                 {
+                  myArray2.removeLast();
+                  b--;
+                 }
+                 else if(v!=" ")
+                 {
+                  v=" ";
+                 }
+                 else
+                 {
+                  myArray1.removeLast();
+                  a--;
+                 }
+                 }
+                }
+              );
+                
                
                },
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
@@ -155,7 +187,7 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                  setState(() {
-                  v="sin";
+                 myArray.add("sin");
                      i++;
                 });
                },
@@ -170,8 +202,9 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                  setState(() {
-                  v="-";
-                     i++;
+                     myArray.add("-");
+                   i++;
+                   v="-";
                 });
                },
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
@@ -182,7 +215,7 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                  setState(() {
-                   myArray1.add(4); 
+                   myArray.add("4"); 
                       i++;
                 });
                },
@@ -194,7 +227,7 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                  setState(() {
-                   myArray1.add(5);
+                   myArray.add("4");
                       i++; 
                 });
                },
@@ -206,7 +239,7 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                  setState(() {
-                   myArray1.add(6); 
+                   myArray.add("6"); 
                       i++;
                 });
                },
@@ -218,12 +251,14 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                  setState(() {
+                    myArray.clear();
                     myArray1.clear();
+                    myArray2.clear();
                     i=0;
-                    
-                    
-                   
-                 });
+                    result=0;
+                     v=" ";
+                   }
+                 );
                },
                backgroundColor: const Color.fromARGB(255, 123, 224, 138),
                 child:const Center(child: Text("AC",style: TextStyle(fontSize: 30,fontWeight: FontWeight.w500),)),
@@ -233,7 +268,7 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                  setState(() {
-                    v="cos";
+                    myArray.add("cos");
                        i++;
                 });
                },
@@ -248,7 +283,7 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                  setState(() { 
-                  v="×";
+                  myArray.add("×");
                      i++; 
                 });
                },
@@ -260,7 +295,7 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                   setState(() {
-                  myArray1.add(7); 
+                  myArray.add("7"); 
                      i++;
                 });
                },
@@ -272,7 +307,7 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                   setState(() {
-                  myArray1.add(8);
+                  myArray.add("8");
                      i++; 
                 });
                },
@@ -284,7 +319,7 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                   setState(() {
-                   myArray1.add(9);
+                   myArray.add("9");
                       i++; 
                 });
                },
@@ -296,7 +331,7 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                   setState(() {
-                   myArray1.add(0); 
+                   myArray.add("0"); 
                       i++;
                 });
                },
@@ -308,7 +343,7 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                   setState(() {
-                  v="tan" ;
+                 myArray.add("tan");
                      i++;
                 });
                },
@@ -324,7 +359,7 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                   setState(() {
-                  v="÷";
+                 myArray.add("÷");
                      i++; 
                 });
                },
@@ -336,7 +371,7 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                  setState(() {
-                 v="."; 
+                  myArray.add(".");
                     i++;
                 });
                },
@@ -348,7 +383,7 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                  setState(() {
-                  v="("; 
+                   myArray.add("(");
                      i++;
                 });
                },
@@ -360,7 +395,7 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                  setState(() {
-                  v=")";
+                 myArray.add(")");
                      i++; 
                 });
                },
@@ -372,7 +407,7 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                  setState(() {
-                 v="√"; 
+                 myArray.add("√");
                     i++;
                 });
                },
@@ -384,7 +419,7 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                  setState(() {
-                   v="log";
+                   myArray.add("log");
                       i++; 
                 });
                },
@@ -399,7 +434,7 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                  setState(() {
-                    v="Ans";
+                    myArray.add("Ans");
                        i++; 
                 });
                },
@@ -411,7 +446,7 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                  setState(() {
-                   v="x!"; 
+                    myArray.add("x!");
                       i++;
                 });
                },
@@ -423,7 +458,7 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                  setState(() {
-                   v="%"; 
+                   myArray.add("%");
                       i++;
                 });
                },
@@ -435,7 +470,7 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                  setState(() {
-                   v="^"; 
+                   myArray.add("^");
                       i++;
                 });
                },
@@ -447,7 +482,7 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                  setState(() {
-                   v="e"; 
+                    myArray.add("e");
                       i++;
                 });
                },
@@ -459,7 +494,7 @@ class _MyAppState extends State<MyApp> {
                padding: const EdgeInsets.all(4.0),
                child: FloatingActionButton(onPressed:() {
                  setState(() {
-                    v="="; 
+                      myArray.add("=");
                 });
                },
                backgroundColor: Color.fromARGB(255, 245, 3, 3),
@@ -481,3 +516,23 @@ class _MyAppState extends State<MyApp> {
   
 
 }
+int add({required int j,required int k}){
+  return j+k;
+}
+int difference({required int j,required int k}){
+  return j-k;
+}
+/*void clear(int myArray1,int myArray2,String v)
+{
+  if(myArray2!=Null)
+  {
+           
+  } 
+  else if(v!=Null)
+  {
+        v=" ";
+  } 
+        else {
+  myArray1.removeLast();
+  }
+}*/
